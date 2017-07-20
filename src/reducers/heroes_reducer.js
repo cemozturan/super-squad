@@ -1,5 +1,5 @@
-import characters_json from '../data/characters.json';
 import { ADD_CHARACTER } from '../actions';
+import { createCharacter } from './helpers';
 
 function heroes(state = [], action) {
   switch(action.type) {
@@ -9,11 +9,6 @@ function heroes(state = [], action) {
     default:
       return state;
   }
-}
-
-function createCharacter(id) {
-  let character = characters_json.find(item => item.id === id);
-  return character;
 }
 
 export default heroes;
